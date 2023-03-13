@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
+import Category from './Category'
+
+
 
 const Products = () => {
     const [data, setDate] = useState([])
@@ -59,6 +62,7 @@ const Products = () => {
                                     </div>
                                 </div>
                             </div>
+                            
                         </>
                     )
                 })}
@@ -68,21 +72,91 @@ const Products = () => {
 
     return (
         <div>
-            <div className='container my-5 py-5'>
+            <div className='container my-4 py-4'>
                 <div className='row'>
-                    <div className='col-12 mb-5'>
-                        <h1 className='display-6 fw-bolder text-center'>
+                    <div className='col-9 mb-4'>
+                        <h1 className='display-4 fw-bolder text-center'>
                             Latest Product
                         </h1>
-                        <hr></hr>
                     </div>
                 </div>
-                <div className='row justify-content-center'>
-                    {Loading ? <Loading/> : <ShowProducts/>}
-                </div>
 
+                <div className='row'>
+                    <div class="col-3">
+                        <div class="row">
+                            <div class="col">
+                                <label for="cars">Category:</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Select Category:</option>
+                                    <option value="1">Tv</option>
+                                    <option value="2">Mobile</option>
+                                    <option value="3">Home</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="cars">Brand:</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Select Brand:</option>
+                                    <option value="1">Tv</option>
+                                    <option value="2">Mobile</option>
+                                    <option value="3">Home</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="cars">Product:</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Select Product:</option>
+                                    <option value="1">Tv</option>
+                                    <option value="2">Mobile</option>
+                                    <option value="3">Home</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Please select your Price Range:</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        100-200
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        200-500
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        500-5000
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary">Submit</button>
+                        </div>
+
+
+                        
+                    </div>
+                    
+                    <div class="col-9">
+                        <div className='row'>
+                            {Loading ? <Loading /> : <ShowProducts />}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+
+        
+        
     )
 }
 export default Products;

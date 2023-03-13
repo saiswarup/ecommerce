@@ -25,6 +25,7 @@ import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
         <li className="nav-item">
           <NavLink className="nav-link" to="#">Contact</NavLink>
         </li>
+       
       </ul>
       <div class='buttons'>
         <NavLink to='' class='btn btn-outline-dark'>
