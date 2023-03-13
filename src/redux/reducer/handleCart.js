@@ -9,6 +9,9 @@ const handleCart=(state=cart,action)=>
             if (exist){
                 return state.map((x)=>x.id ===product.id?{...x,qty:x.qty+1}:x);
             }
+            else{
+                const product=action.payload;
+            }
             break;
     
         default:
