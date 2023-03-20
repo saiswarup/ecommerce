@@ -4,17 +4,22 @@ const Home = () => {
   return (
     <div className="hero">
       <div className="card text-bg-dark">
-        <img src="/assets/bg.jpg" className="card-img" alt="Background" height="550px" />
+        <img
+          src="/assets/bg.jpg"
+          className="card-img"
+          alt="Background"
+          height="450px"
+        />
         <div className="card-img-overlay d-flex flex-column justify-content-center ">
           <div className="container">
-            <h5 className='card-title display-3 fw-bolder mb-0'>NEW ARRIVALS</h5>
-            <p className="card-text lead fs-2">Check Out ALl Item</p>
+            <h5 className="card-title display-4 fw-bolder mb-9">
+              Ecommerce Website
+            </h5>
           </div>
         </div>
       </div>
       <Products />
     </div>
-    
-  )
-}
-export default Home
+  );
+};
+export default Home;

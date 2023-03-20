@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "productId": "1",
+    "name": "HP 14s, 11th Gen Intel Core i3-1115G4",
+    "Image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    "price": "$100",
+    "description": "Good Product"
+  },
+  {
+    "id": "2",
+    "productId": "2",
+    "name": "HP 250 G8 Laptop ",
+    "Image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    "price": "$100",
+    "description": "Good Product"
+  },
+  {
+    "id": "3",
+    "productId": "3",
+    "name": "Dell Vostro 3420 Laptop",
+    "Image": "xyz2-image",
+    "price": "$100",
+    "description": "Good Product"
+  },
+  {
+    "id": "4",
+    "productId": "4",
+    "name": "Dell Inspiron 3520 Laptop",
+    "Image": "xyz3-image",
+    "price": "$100",
+    "description": "Good Product"
+  },
+  {
+    "id": "1",
+    "productId": "5",
+    "name": "Nokia T21 with 10.36 2K Screen",
+    "Image": "xyz4-image",
+    "price": "$100",
+    "description": "Good Product"
+  },
+  {
+    "id": "2",
+    "productId": "6",
+    "name": "Nokia 8210 4G Volte keypad Phone with Dual SIM",
+    "Image": "xyz5-image",
+    "price": "$100",
+    "description": "Good Product"
+  },
+  {
+    "id": "3",
+    "productId": "7",
+    "name": "Samsung Galaxy S23 Ultra 5G",
+    "Image": "xyz6-image",
+    "price": "$100",
+    "description": "Good Product"
+  },
+  {
+    "id": "4",
+    "productId": "8",
+    "name": "Samsung Galaxy M13",
+    "Image": "xyz7-image",
+    "price": "$100",
+    "description": "Good Product"
+  }
+]
