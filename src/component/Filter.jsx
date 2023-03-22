@@ -41,6 +41,13 @@ function Filter() {
       categoriesId: "2",
       name: "Samsung",
     },
+    {
+      id: "5",
+      categoriesId: "1",
+      name: "txt",
+      Image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/180px-HP_logo_2012.svg.png",
+    },
   ];
 
   const products = [
@@ -252,15 +259,18 @@ function Filter() {
                         <div class="row g-2">
                           <div class="col-6">
                             <div class="row g-2 ">
-                              {/* <img
+                              <img
                                 src={ctr.Image}
                                 className="rounded-circle shadow-4-strong"
                                 width="30"
                                 height="50"
                                 alt={ctr.Image}
                               />
-                              <p>{ctr.name}</p> */}
-                              {productsdeatails.map((product) => {
+
+                              <Link to={`/products/${ctr.id}`}>
+                                <h5>{ctr.name}</h5>
+                              </Link>
+                              {/* {brands.map((product) => {
                                 return (
                                   <article key={product.id}>
                                     <img
@@ -276,7 +286,7 @@ function Filter() {
                                     </Link>
                                   </article>
                                 );
-                              })}
+                              })} */}
                             </div>
                           </div>
                         </div>

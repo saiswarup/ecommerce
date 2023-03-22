@@ -1,6 +1,6 @@
 const products = [
   {
-    id: "recZkNf2kwmdBcqd0",
+    id: "1",
     name: "HP",
     price: "100",
     rating: "4",
@@ -10,7 +10,7 @@ const products = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/180px-HP_logo_2012.svg.png",
   },
   {
-    id: "recEHmzvupvT8ZONH",
+    id: "2",
     name: "DELL",
 
     image:
