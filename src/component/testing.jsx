@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import Skeleton from "react-loading-skeleton";
+import Data from "./data.json";
 
 const Product = () => {
   const { id } = useParams();
@@ -11,12 +12,13 @@ const Product = () => {
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch(`data.json/${id}`);
+      const response = await fetch(`https://dummyjson.com/products/${id}`);
       setProduct(await response.json());
       setLoading(false);
     };
     getProducts();
   }, []);
+
   const Loading = () => {
     return (
       <>
@@ -40,7 +42,7 @@ const Product = () => {
       <>
         <div className="col-md-6">
           <img
-            src={product.image}
+            src={product.thumbnail}
             alt={product.title}
             height="400px"
             width="400px"

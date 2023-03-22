@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import Category from "./Category";
-import Records from "./data.json";
+import Records from "./data1.json";
 import Filter from "./Filter";
+import products from "./data";
 
 const Products = () => {
   const [data, setDate] = useState([]);
@@ -13,9 +14,8 @@ const Products = () => {
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      // const response = await fetch("https://fakestoreapi.com/products");
+      //const response = await fetch("https://fakestoreapi.com/products");
       const response = await fetch("https://dummyjson.com/products");
-
       if (componentMounted) {
         setDate(await response.clone().json());
         setFilter(await response.json());
@@ -162,15 +162,26 @@ const Products = () => {
   return (
     <div>
       <div className="container my-4 py-4">
-        {/* <div className="row">
-          <div className="col-9 mb-4">
-            <h1 className="display-4 fw-bolder text-center">Latest Product</h1>
-          </div>
-        </div> */}
+        <div className="row"></div>
 
         <div>
-          {/* {<ShowProducts />} */}
           {<Filter> </Filter>}
+          {/* <div className="col-9 mb-4">
+            <section className="section">
+              <div className="products">
+                {products.map((product) => {
+                  return (
+                    <article key={product.id}>
+                      <h5>{product.name}</h5>
+                      <NavLink to={`/products/${product.id}`}>
+                        more info
+                      </NavLink>
+                    </article>
+                  );
+                })}
+              </div>
+            </section>
+          </div> */}
           {/* <div class="col-3">
             {<Filter> </Filter>}
             <div class="row">

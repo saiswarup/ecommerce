@@ -1,23 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom";
+import products from "./data";
 import Skeleton from "react-loading-skeleton";
-import Data from "./data1";
+import React, { useState, useEffect } from "react";
 
-const Product = () => {
-  const { id } = useParams();
-  const [product, setProduct] = useState([]);
+const SingleProduct = () => {
+  const { productId } = useParams();
+  const product = products.find((product) => product.id === productId);
+  const { image, name, price, description, rating } = product;
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const getProducts = async () => {
-      setLoading(true);
-      const response = await fetch(`https://dummyjson.com/products/${id}`);
-      setProduct(await response.json());
-      setLoading(false);
-    };
-    getProducts();
-  }, []);
 
   const Loading = () => {
     return (
@@ -41,21 +31,16 @@ const Product = () => {
     return (
       <>
         <div className="col-md-6">
-          <img
-            src={product.thumbnail}
-            alt={product.title}
-            height="400px"
-            width="400px"
-          />
+          <img src={image} alt={name} height="400px" width="400px" />
         </div>
         <div className="col-md-6">
-          <h4 className="text-uppercase text-black-50">{product.category}</h4>
-          <h1 className="display-5">{product.title}</h1>
+          <h1 className="display-5">{name}</h1>
+          <p className="display-5">${price}</p>
+
           <p className="lead fw-bolder">
-            Rating {product.rating && product.rating.rate}
+            Rating {rating}
             <i className="fa fa-star"></i>
           </p>
-          <h3 className="display-6 fw-bold my-4">${product.price}</h3>
           <p className="lead">{product.description}</p>
           <button className="btn btn-outline-dark px-4 py-2">
             Add to cart
@@ -75,4 +60,5 @@ const Product = () => {
     </div>
   );
 };
-export default Product;
+
+export default SingleProduct;

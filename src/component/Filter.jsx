@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
+import { Link } from "react-router-dom";
+import productsdeatails from "./datadata";
+import products from "./data";
+
 function Filter() {
   const categories = [
     {
@@ -248,48 +252,34 @@ function Filter() {
                         <div class="row g-2">
                           <div class="col-6">
                             <div class="row g-2 ">
-                              <img
+                              {/* <img
                                 src={ctr.Image}
                                 className="rounded-circle shadow-4-strong"
                                 width="30"
                                 height="50"
                                 alt={ctr.Image}
                               />
-                              <p>{ctr.name}</p>
-                              <NavLink
-                                to={`/products/${ctr.id}`}
-                                className="btn btn-outline-dark"
-                              >
-                                Buy Now
-                              </NavLink>
+                              <p>{ctr.name}</p> */}
+                              {productsdeatails.map((product) => {
+                                return (
+                                  <article key={product.id}>
+                                    <img
+                                      src={product.image}
+                                      className="rounded-circle shadow-4-strong"
+                                      width="30"
+                                      height="50"
+                                      alt={product.image}
+                                    />
+
+                                    <Link to={`/products/${product.id}`}>
+                                      <h5>{product.name}</h5>
+                                    </Link>
+                                  </article>
+                                );
+                              })}
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </>
-                  );
-                })
-              : "No Image"}
-          </div>
-        </div>
-        <div className="row">
-          <div class="col-3">
-            {image && image !== undefined
-              ? image.map((ctr, index) => {
-                  return (
-                    <>
-                      <div className="card">
-                        <img
-                          src={ctr.Image}
-                          className="card-img-top"
-                          alt={ctr.Image}
-                        />
-                        <p>{ctr.name}</p>
-                        <p>{ctr.price}</p>
-                        <p>{ctr.description}</p>
-                        <button type="button" class="btn btn-primary">
-                          Add to Cart
-                        </button>
                       </div>
                     </>
                   );
